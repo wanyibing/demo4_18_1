@@ -38,9 +38,38 @@ public class OrderController {
     public Order getOrderById(@RequestParam("id") Integer id){
         Order order = orderService.getOrderById(id);
         //service-user是被调用服务名称，spring.application.name的名称
-        //User user = restTemplate.getForObject("http://service-user/user/getUserById?id="+order.getUserId(), User.class);
+        User user = restTemplate.getForObject("http://service-user/user/getUserById?id="+order.getUserId(), User.class);
 //        User user = userFeignClient.getUserById(id);
-        User userParam = new User();
+       /* User userParam = new User();
+        userParam.setId(1);
+        User user = userFeignClient.getUserByUser(userParam);
+        log.info("user:{}",user);*/
+        order.setUsername(user.getName());
+        return order;
+    }
+
+    @RequestMapping("getOrderById2")
+    public Order getOrderById2(@RequestParam("id") Integer id){
+        Order order = orderService.getOrderById(id);
+        //service-user是被调用服务名称，spring.application.name的名称
+        //User user = restTemplate.getForObject("http://service-user/user/getUserById?id="+order.getUserId(), User.class);
+       User user = userFeignClient.getUserById(id);
+      /*  User userParam = new User();
+        userParam.setId(1);
+        User user = userFeignClient.getUserByUser(userParam);
+        log.info("user:{}",user);*/
+        order.setUsername(user.getName());
+        return order;
+    }
+
+
+    @RequestMapping("getOrderById3")
+    public Order getOrderById3(@RequestParam("id") Integer id){
+        Order order = orderService.getOrderById(id);
+        //service-user是被调用服务名称，spring.application.name的名称
+        //User user = restTemplate.getForObject("http://service-user/user/getUserById?id="+order.getUserId(), User.class);
+      //  User user = userFeignClient.getUserById(id);
+         User userParam = new User();
         userParam.setId(1);
         User user = userFeignClient.getUserByUser(userParam);
         log.info("user:{}",user);
