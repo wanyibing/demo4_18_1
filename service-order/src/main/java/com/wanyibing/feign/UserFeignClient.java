@@ -6,6 +6,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * z指定服务名称:service-user
+ * feign服务端是调用用户服务接口的
+ * orderf服务调用了用户服务,如果其他服务服务
+ * 那么它也压迫创建feignclient相关接口 其他
+ */
 @Component
 @FeignClient(name = "service-user")
 public interface UserFeignClient {
