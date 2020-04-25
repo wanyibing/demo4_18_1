@@ -2,19 +2,42 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="configclient" />
+        <module name="cloudgateway" />
+        <module name="serviceuserinterface" />
+        <module name="configservice" />
+        <module name="consuleclient" />
+        <module name="serviceuser" />
+        <module name="serviceorder" />
         <module name="eurekaserver" />
+        <module name="zuulgateway" />
         <module name="eurekaclient" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="consuleconsul" target="1.8" />
+      <module name="servicea" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloudgateway" options="-parameters" />
+      <module name="configclient" options="-parameters" />
+      <module name="configservice" options="-parameters" />
+      <module name="consuleclient" options="-parameters" />
+      <module name="consuleconsul" options="-parameters" />
       <module name="eurekaclient" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
+      <module name="servicea" options="-parameters" />
+      <module name="serviceorder" options="-parameters" />
+      <module name="serviceuser" options="-parameters" />
+      <module name="serviceuserinterface" options="-parameters" />
+      <module name="zuulgateway" options="-parameters" />
     </option>
   </component>
 </project>

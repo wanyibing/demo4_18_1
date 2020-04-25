@@ -1,5 +1,6 @@
 package com.wanyibing.controller;
 
+import com.wanyibing.dao.UserRepository;
 import com.wanyibing.entity.User;
 import com.wanyibing.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,16 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private UserRepository userRepository;
+
+    @RequestMapping("getuser")
+    public User getuser(@RequestParam("id") Integer id){
+
+        User one = userRepository.getOne(id);
+
+        return one;
+    }
     /**
      * 根据Id查询用户
      * @param id

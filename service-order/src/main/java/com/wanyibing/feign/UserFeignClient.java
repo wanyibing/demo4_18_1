@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  */
 @Component
-@FeignClient(name = "service-user")
+@FeignClient(name = "service-user"/*,fallback= UserFeignBack.class*/)
 public interface UserFeignClient {
 
     @RequestMapping("/user/getUserById")
@@ -27,4 +27,10 @@ public interface UserFeignClient {
      */
     @RequestMapping("/user/getUsernameById")
     public String getUsernameById(@RequestParam("id") Integer id);
+
+    /**
+     * 数据库
+     */
+    @RequestMapping("/user/getuser")
+    public User getuser(@RequestParam("id") Integer id);
 }

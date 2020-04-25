@@ -1,6 +1,6 @@
 package com.wanyibing.entity;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,15 +11,14 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
-@Table(name="t_order")
+@Table(name="t_user")
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer"})
-public class Order {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String orderno;
-    private Integer userId;
-    @Transient
-    private String username;
+    private String name;
+
+
 }

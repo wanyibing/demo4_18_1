@@ -10,6 +10,15 @@
     <modules>
         <module>eureka-server</module>
         <module>eureka-client</module>
+        <module>service-user</module>
+        <module>service-user-interface</module>
+        <module>service-order</module>
+        <module>consule-client</module>
+        <module>zuul-gateway</module>
+        <module>cloud-gateway</module>
+        <module>config-service</module>
+        <module>service-a</module>
+        <module>config-client</module>
     </modules>
     <packaging>pom</packaging>
 
